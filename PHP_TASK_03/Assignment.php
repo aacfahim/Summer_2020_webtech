@@ -6,14 +6,17 @@ function nameCheck()
 	{
 		$sname = $_POST['name'];
 
-		if($sname == "")
+		if($sname == "" || strlen($sname) < 2 || ctype_digit($sname[0]) )
 		{
-			echo "Name cant be blank";
+			echo "Please enter a valid name";
 		}
 	}
 
 }
 
+function checkemailPattern($str) {
+	return (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $str)) ? FALSE : TRUE;
+}
 
 function EmailCheck()
 {
@@ -21,14 +24,43 @@ function EmailCheck()
 	{
 		$sEmail = $_POST['Email'];
 
-		if($sEmail == "")
+		if($sEmail == "" || checkemailPattern($sEmail))
 		{
-			echo "Email is required";
+			echo "Valid Email is required";
 		}
 	}
 
 }
 
+
+function IsGenderSelected()
+{
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+		$sGender = $_POST['gender'];
+
+		if($sGender == "")
+		{
+			echo "Please select your gender";
+		}
+	}
+
+}
+
+
+function DOB()
+{
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+		$s = $_POST['gender'];
+
+		if($sGender == "")
+		{
+			echo "Please select your gender";
+		}
+	}
+
+}
 
 ?>
 
@@ -78,7 +110,7 @@ function EmailCheck()
 <input type="radio" id="female" name="gender" value="female">
 <label for="female"><b>Female</b></label>
 <input type="radio" id="other" name="gender" value="other">
-<label for="other"><b>Other</b></label>
+<label for="other"><b>Other</b></label>   <?php IsGenderSelected(); ?> 
 	</td>
 
 	</tr>
@@ -86,7 +118,7 @@ function EmailCheck()
 <tr>
 
 <td><b>Date Of Birth:</b></td>
-<td>  <input type="date" id="male" name="gender" value="male">
+<td>  <input type="date" id="male" name="gender" value="male"> (dd/mm/yyyy)
    </td>
 
 
@@ -131,6 +163,16 @@ function EmailCheck()
 
 
 </tr>
+
+
+<tr>
+        <td width="30%"><b>Photo</b></td>
+        <td width="70%" colspan="2">
+            <input type="file" name = "photo" >
+		</td>
+</tr>
+	
+
 <tr>
 
 <td colspan="2">

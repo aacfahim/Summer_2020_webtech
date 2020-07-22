@@ -4,15 +4,16 @@ function nameCheck()
 {
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
-		$name = $_POST['name'];
+		$sname = $_POST['name'];
 
-		if($name == "")
+		if($sname == "")
 		{
 			echo "Name cant be blank";
 		}
 	}
 
 }
+
 
 
 ?>
@@ -36,7 +37,7 @@ function nameCheck()
 </td>
 
 <td>
-<input type="text" name="name" value=""> <br/>
+<input type="text" name="name" value=""><?php nameCheck(); ?> <br/>
 	</td>
 
 	</tr>

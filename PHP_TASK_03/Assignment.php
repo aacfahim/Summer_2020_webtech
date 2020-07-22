@@ -15,6 +15,20 @@ function nameCheck()
 }
 
 
+function EmailCheck()
+{
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+		$sEmail = $_POST['Email'];
+
+		if($sEmail == "")
+		{
+			echo "Email is required";
+		}
+	}
+
+}
+
 
 ?>
 
@@ -48,7 +62,7 @@ function nameCheck()
 
 </td>
 <td>
-<input type="Email" name="Email"><br/>
+<input type="Email" name="Email"><?php EmailCheck(); ?> <br/>
 </td>
 </tr>
 

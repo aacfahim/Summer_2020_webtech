@@ -22,7 +22,7 @@
                 ?> </td>
 
             <tr>
-                <td><a href="dashboard.html">Dashboard</a></td>
+                <td><a href="dashboard.php">Dashboard</a></td>
             </tr>
             <tr>
                 <td><a href="">View Profile</a></td>
@@ -38,6 +38,11 @@
             </tr>
             <tr>
                 <td><a href="logout.php">Logout</a></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>Welcome <?php echo $_GET['msg']; ?> </td>
             </tr>
 
         </table>

@@ -10,8 +10,8 @@
         $password = ( $_POST['password']);
         $gender = $_POST['gender'];
 
-        if(empty($uname) || empty($email) || empty($password)){
-            echo "Null submission found";
+        if(empty($userName) || empty($email) || empty($password)){
+            echo "Can't accept null";
         }else{
 
             setcookie('name', $name, time()+3600, '/'); 
@@ -19,14 +19,14 @@
             setcookie('userName', $userName, time()+3600, '/');
             setcookie('password', $password, time()+3600, '/');
 
-            //echo "Registration Done..!";
-            header('location:login.php');
+            echo "Registration Done..!";
+            //header('location:login.html');
         }
     }
 
     else{
-        //echo "invalid request";
-        header('location:login.php'); 
+        echo "invalid request";
+        //header('location:login.html'); 
 
     }
 

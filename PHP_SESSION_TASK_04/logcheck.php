@@ -12,10 +12,10 @@
         }
         else{
             if(isset($_COOKIE['userName']) && isset($_COOKIE['password'])){
-                if($uname == $_COOKIE['userName'] && $password == $_COOKIE['password']){
+                if($userName == $_COOKIE['userName'] && $password == $_COOKIE['password']){
 
                     setcookie('STATUS', 'OK', time()+3600, '/');
-                    header('location: dashboard.html');
+                    header('location: dashboard.php?msg="$userName"');
 
 
                 }else{

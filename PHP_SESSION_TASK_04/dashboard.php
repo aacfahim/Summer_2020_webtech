@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +9,18 @@
 </head>
 <body>
     <form>
+        
         <table>
+            <img src="images/logo.png">
+            <td>Logged in as <?php
+
+                if(isset($_GET['msg'])){
+                    echo $_GET['msg'];
+                }
+                
+                
+                ?> </td>
+
             <tr>
                 <td><a href="dashboard.html">Dashboard</a></td>
             </tr>

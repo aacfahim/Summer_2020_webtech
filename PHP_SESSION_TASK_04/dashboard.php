@@ -14,9 +14,7 @@
             <img src="images/logo.png">
             <td>Logged in as <?php
 
-                if(isset($_GET['msg'])){
-                    echo $_GET['msg'];
-                }
+                echo $_COOKIE["userName"]
                 
                 
                 ?> </td>
@@ -42,7 +40,7 @@
 
             <tr>
                 <td></td>
-                <td>Welcome <?php echo $_GET['msg']; ?> </td>
+                <td>Welcome <?php echo $_COOKIE["userName"]; ?> </td>
             </tr>
 
         </table>

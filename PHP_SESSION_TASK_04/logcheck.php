@@ -15,7 +15,7 @@
                 if($userName == $_COOKIE['userName'] && $password == $_COOKIE['password']){
 
                     setcookie('STATUS', 'OK', time()+3600, '/');
-                    header('location: dashboard.php?msg="$userName"');
+                    header('location: dashboard.php?msg=userName');
 
 
                 }else{
@@ -31,7 +31,7 @@
     }
     else{
         //echo "invalid request";
-        header('location:login.php'); //generates http request.
+        header('location:login.php'); 
 
     }
 

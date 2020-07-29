@@ -1,6 +1,6 @@
 <?php
 
-    session_start();  //SESSION IS ASSOCIATIVE ARRAY*
+    session_start(); 
 
     if(isset($_POST['submit'])){
 
@@ -13,11 +13,8 @@
         if(empty($uname) || empty($email) || empty($password)){
             echo "Null submission found";
         }else{
-            // $_SESSION['uname'] = $uname;
-            // $_SESSION['email'] = $email;
-            // $_SESSION['password'] = $password;
 
-            setcookie('name', $name, time()+3600, '/'); //holds the data for 5 mins
+            setcookie('name', $name, time()+3600, '/'); 
             setcookie('email', $email, time()+3600, '/');
             setcookie('userName', $userName, time()+3600, '/');
             setcookie('password', $password, time()+3600, '/');
@@ -29,7 +26,7 @@
 
     else{
         //echo "invalid request";
-        header('location:login.php'); //generates http request.
+        header('location:login.php'); 
 
     }
 

@@ -10,38 +10,55 @@
 <body>
     <form>
         
-        <table>
-            <img src="images/logo.png">
-            <td>Logged in as <?php
+        <table border="1" align="center" size="100%">
+            <tr>
+            <td colspan ="2">
+            <img width="50" height="40" src="images/logo.png">
+             
+             <align="right"> Logged in as <?php
 
                 echo $_COOKIE["userName"]
-                
-                
-                ?> </td>
+                ?> </align>
+           
 
-            <tr>
-                <td><a href="dashboard.php">Dashboard</a></td>
-            </tr>
-            <tr>
-                <td><a href="">View Profile</a></td>
-            </tr>
-            <tr>
-                <td><a href="edit_profile.html">Edit Profile</a></td>
-            </tr>
-            <tr>
-                <td><a href="">Chanage Profile Picture</a></td>
-            </tr>
-            <tr>
-                <td><a href="">Change Password</a></td>
-            </tr>
-            <tr>
-                <td><a href="logout.php">Logout</a></td>
+            </td>
+           
             </tr>
 
             <tr>
-                <td></td>
-                <td>Welcome <?php echo $_COOKIE["userName"]; ?> </td>
-            </tr>
+            <td >
+            <legend>Account</legend>
+            <ul>
+                <li><a href="dashboard.php">Dashboard</a></li>
+            </ul>
+            <ul>
+                <li><a href="view_profile.php">View Profile</a></li>
+            </ul>
+            <ul>
+                <li><a href="edit_profile.php">Edit Profile</a></li>
+            </ul>
+            <ul>
+                <li><a href="">Chanage Profile Picture</a></li>
+            </ul>
+            <ul>
+                <li><a href="change_password.html">Change Password</a></li>
+            </ul>
+            <ul>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+            </td>   
+            <td>
+                <strong> Welcome <?php echo $_COOKIE["name"]; ?></strong>
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td colspan="2" align=center>
+            <footer>Copyright <span>&#169;</span>2020</footer></td>
+        </tr>
+        
 
         </table>
     </form>

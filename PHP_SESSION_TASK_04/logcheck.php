@@ -15,11 +15,12 @@
                 if($userName == $_COOKIE['userName'] && $password == $_COOKIE['password']){
 
                     setcookie('STATUS', 'OK', time()+3600, '/');
-                    header('location: dashboard.php?msg=userName');
+                    header('location: dashboard.php');
 
 
                 }else{
-                    header('location:login.html');
+                    echo "Wrong credentials";
+                    //header('location:login.html');
                 }
             }
             else{

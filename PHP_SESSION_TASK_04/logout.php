@@ -2,6 +2,6 @@
     
     setcookie('STATUS', 'OK', time()-3600, '/');
 
-    header('location:login.html');
+    header('location:public_home.html');
 
 ?>

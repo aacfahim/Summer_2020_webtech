@@ -11,6 +11,8 @@
             echo "Username/Password is needed";
         }
         else{
+
+
             if(isset($_COOKIE['userName']) && isset($_COOKIE['password'])){
 
                 if($userName == $_COOKIE['userName'] && $password == $_COOKIE['password']){

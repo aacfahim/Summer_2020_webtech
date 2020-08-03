@@ -26,15 +26,15 @@
             
             if($type == 'user')
             {
-                $file = fopen('user.txt', 'w');
-                $user = $userName."|".$password."|".$email."|".$type;
+                $file = fopen('user.txt', 'a');
+                $user = $userName."|".$password."|".$email."|".$type."\n";
                 fwrite($file, $user);
                 fclose($file);
 
             }
             else{
-                $file = fopen('admin.txt', 'w');
-                $user = $userName."|".$password."|".$email."|".$type;
+                $file = fopen('admin.txt', 'a');
+                $user = $userName."|".$password."|".$email."|".$type."\n";
                 fwrite($file, $user);
                 fclose($file);
             }

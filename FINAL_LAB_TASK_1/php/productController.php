@@ -1,5 +1,5 @@
 <?php
-	require_once('../service/productService.php');
+	require_once('../service/productServices.php');
 
 	//create new user
 	if(isset($_POST['create_product'])){
@@ -13,7 +13,7 @@
 		if(empty($name) || empty($quantity) || empty($price) || empty($status)){
 			header('location: ../views/create_product.php?error=null');
 		}else{
-			$product = [
+			$products = [
 				'name'=>$name,
 				'desc'=>$desc,
                 'quantity'=>$quantity,
@@ -24,7 +24,7 @@
 
                 
 			];
-			$status = create($product);
+			$status = create($products);
 			if($status){
 				header('location: ../views/product_list.php?msg=success');
 			}else{

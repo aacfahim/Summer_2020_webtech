@@ -21,23 +21,11 @@
 		return $products;
 	}
 
-	function validate ($products){
+
+	function create($products){
 		$con = dbConnection();
-		$sql = "select * from users where username='{$products['username']}' and password='{$user['password']}'";
-
-		$result = mysqli_query($con, $sql);
-		$row = mysqli_fetch_assoc($result);
-
-		if(count($row) > 0){
-			return true;
-		}else{
-			return false;
-		}
-	}
-
-	function create($user){
-		$con = dbConnection();
-		$sql = "insert into users values('', '{$products['name']}', '{$user['desc']}', '{$user['quantity']}', '{$user['quantity']}','user')";
+        $sql = "insert into products values('', '{$products['name']}', '{$products['desc']}', '{$products['quantity']}',
+         '{$products['date']}','{$products['price']}', '{$products['status']}','{$products['image']}')";
 
 		if(mysqli_query($con, $sql)){
 			return true;
@@ -48,7 +36,10 @@
 
 	function update($products){
 		$con = dbConnection();
-		$sql = "update users set username='{$products['username']}', password='{$user['password']}', email='{$user['email']}' where id={$user['id']}";
+        $sql = "update products set name='{$products['name']}', 
+        desc='{$products['desc']}', quantity='{$products['quantity']}',
+        date='{$products['date']}',price='{$products['price']}',status='{$products['status']}',image='{$products['image']}'
+        where id={$products['id']}";
 
 		if(mysqli_query($con, $sql)){
 			return true;
@@ -61,7 +52,7 @@
 		$delete = 	$_POST['delete'];
 
 		$con = dbConnection();
-		$sql = "delete from users where id={$products['id']}";
+		$sql = "delete from products where id={$products['id']}";
 
 
 		if(mysqli_query($con, $sql)){

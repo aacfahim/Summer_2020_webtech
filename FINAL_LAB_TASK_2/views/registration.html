@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<script src = "../controller/regcheck.js"> </script>
+	<title>PERSON REGISTRATION</title>
+</head>
+<body>
+<form action = "welcome.html" method= "POST" onsubmit="return validateForm()">
+	<table  cellspacing="0" cellpadding="5" border="1" align="center">
+		<tr>
+			<th colspan="3" cellpadding="5"><p>PERSON PROFILE</p></th>
+		</tr>
+
+		<tr>
+			<td> Name </td>
+			<td><input type="text" name="name" > </td> 
+		</tr>
+		<tr>
+			<td> Email </td>
+			<td><input type="email" name="email" > </td> 
+		</tr>
+		<tr>
+			<td> Gender </td>
+			<td>
+				<input type="radio" id="male" name="gender" value="male"> 
+				<label for="male">Male</label>
+				<input type="radio" id="female" name="gender" value="female"> 
+				<label for="female">Female</label>
+				<input type="radio" id="other" name="gender" value="other">
+				<label for="other">Other</label> 
+			</td> 
+		</tr>
+
+		<tr>
+			<td>
+				<label for="dob">Date of Birth:</label>
+			</td>
+			
+			<td>
+				<input type="date" id="dob" name="dob">
+			</td>
+		</tr>
+
+		<tr>
+			<td> <label>Blood Group</label></td>
+			<td>
+				<select id="group" name="group" required>
+					<option value="A+">A+</option>
+					<option value="A-">A-</option>
+					<option value="B+">B+</option>
+					<option value="B-">B-</option>
+					<option value="O+">O+</option>
+					<option value="O-">O-</option>
+				</select>
+			</td>
+		</tr>
+
+		<tr>
+	
+			<td>
+				<label>Degree</label>
+			</td>
+			<td colspan="2">
+				<input type="checkbox" name=""> SSC
+				<input type="checkbox" name=""> HSC
+				<input type="checkbox" name=""> BSc.
+				<input type="checkbox" name=""> MSc.
+			</td>
+		</tr>
+
+
+		<tr>
+			<td>
+				<label>Photo</label>
+			</td>
+			<td>
+				<input type="file" name="uploadfile" value="" />
+			</td>
+		</tr>
+
+		<tr>
+	<td colspan="3" align="right"><input type="submit" name="submit" value="Submit" align="right">	
+		<input type="reset" name=""   value="Reset">
+	</td>
+</tr>
+	</table>
+</form>
+
+
+</body>
+</html>

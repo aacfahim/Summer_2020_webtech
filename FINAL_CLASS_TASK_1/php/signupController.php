@@ -20,9 +20,12 @@
 			$status = create($user);
 		
 			if($status){
-				header('location: ../views/login.php?msg=success');
+				//header('location: ../views/login.php?msg=success');
+				echo "valid";
 			}else{
-				header('location: ../views/signup.php?error=dberror');
+				//header('location: ../views/signup.php?error=dberror');
+				echo "invalid";
+
 			}
 		}
 		

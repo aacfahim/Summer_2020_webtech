@@ -16,6 +16,8 @@
 
 <body>
     <form action="../php/signupController.php" method="post">
+
+    <div id="message"></div>
         <fieldset>
             <legend>SignUp</legend>
             <table>
@@ -34,7 +36,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" value="Submit" onclick="visible()">
+                        <input type="button" id="submit" name="submit" value="Submit" onclick="visible()">
                         <a href="login.php" style="display:none">Login</a>
                     </td>
 
@@ -45,8 +47,32 @@
 
 	<script>
 		function visible(){
-			document.getElementsByTagName('a')[0].style.display = "inline";
-		}
+
+            var regDone = document.getElementById("submit").value;
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.open("POST", "../php/signupController.php", true);
+            xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhttp.send(submit);
+
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+
+                    if(this.responseText == "valid"){
+
+                     document.getElementsByTagName('a')[0].style.display = "inline";
+                    }
+                    else{
+                        document.getElementById("message").innerHTML = "Error";
+                    }
+
+                    }
+                
+
+            }
+
+        }
+
 
 
     </script>

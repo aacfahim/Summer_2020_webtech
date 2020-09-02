@@ -76,7 +76,7 @@
 
             xhttp.open("POST", "regcheck.php", true);
             xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            xhttp.send("name="+name+"username="+username+"email="+email+"password="+password+"type="+type);
+            xhttp.send("username="+username+"name="+name+"email="+email+"password="+password+"type="+type);
 
 			//document.getElementById("message").innerHTML = "name="+name;
 			
@@ -84,12 +84,14 @@
             xhttp.onreadystatechange = function(){
                 if(this.readyState == 4 && this.status == 200){
 
-                    if(this.responseText == "done"){
+					alert(this.responseText);
 
-                        document.getElementsByTagName('a')[0].style.display = "inline";
-                    }else{
-                        document.getElementById("message").innerHTML = "Error";
-                    }
+                    // if(this.responseText == "done"){
+
+                    //     document.getElementsByTagName('a')[0].style.display = "inline";
+                    // }else{
+                    //     document.getElementById("message").innerHTML = "Error";
+                    // }
 
                 }
                 

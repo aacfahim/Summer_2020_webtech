@@ -4,24 +4,22 @@
     session_start();
 
 
-    if(isset($_POST['submit'])){
+    //if(isset($_POST['submit'])){
 
         $name = $_POST['name'];
         $email = $_POST['email'];
-        $userName = $_POST['userName'];
-        $password = ( $_POST['password']);
-        $type = ($_POST['type']);
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $type = $_POST['type'];
 
-        
-        $sql = "INSERT INTO userLogin VALUES ('$userName' ,'$name','$email','$password','$type')";
-        $data = mysqli_query($connection, $sql);
+
 
         if(empty($userName) || empty($email) || empty($password) || empty($name)){
             echo "Can't accept null";
 
         }else{
 
-            $sql = "INSERT INTO superadminlogin VALUES ('$Name' ,'$username','$password','$email','$type')";
+            $sql = "INSERT INTO mini_project VALUES ('$username' ,'$name','$password','$email','$type')";
     
             $data = mysqli_query($connection, $sql);
 
@@ -41,13 +39,13 @@
   
             //header('location:login.html');
         }
-    }
+    //}
 
-    else{
-        echo "invalid request";
-        //header('location:login.html'); 
+    // else{
+    //     echo "invalid request";
+    //     //header('location:login.html'); 
 
-    }
+    // }
 
 
 ?>

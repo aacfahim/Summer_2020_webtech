@@ -1,0 +1,102 @@
+<fieldset>
+    <legend><b>REGISTRATION</b></legend>
+	<form action="regcheck.php" method="POST">
+		<br/>
+		<table width="100%" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>Name</td>
+				<td>:</td>
+				<td><input name="name" type="text" id="name"></td>
+				<td></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td>Email</td>
+				<td>:</td>
+				<td>
+					<input name="email" type="text" id="email">
+					<abbr title="hint: sample@example.com"><b>i</b></abbr>
+				</td>
+				<td></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td>User Name</td>
+				<td>:</td>
+				<td><input name="userName" type="text" id="username"></td>
+				<td></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td>Password</td>
+				<td>:</td>
+				<td><input name="password" type="password" id="password"></td>
+				<td></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td>Confirm Password</td>
+				<td>:</td>
+				<td><input name="confirmPassword" type="password"></td>
+				<td></td>
+			</tr>		
+	
+			<tr><td colspan="4"><hr/></td></tr>
+
+			<tr>
+				<td>User Type : </td>
+				<td>
+					<select name="type" id="type">
+						<option value ="user">User</option>
+						<option value ="admin">Admin</option>
+					</select>
+				</td>
+			</tr>
+
+		</table>
+		<hr/>
+		<input type="button" id="submit" name="submit" value="Submit" onclick="visible()">
+		<input type="reset">
+		<a href="login.html" style="display:none">Login</a>
+	</form>
+
+	<div id="message"></div>
+
+	<script>
+		function visible(){
+
+            //var regDone = document.getElementById("submit").value;
+			var username = document.getElementById("username").value;
+			var name = document.getElementById("name").value;
+			var email = document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+			var type = document.getElementById("type").value;
+
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.open("POST", "regcheck.php", true);
+            xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhttp.send("name="+name+"username="+username+"email="+email+"password="+password+"type="+type);
+
+			//document.getElementById("message").innerHTML = "name="+name;
+			
+
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+
+                    if(this.responseText == "done"){
+
+                        document.getElementsByTagName('a')[0].style.display = "inline";
+                    }else{
+                        document.getElementById("message").innerHTML = "Error";
+                    }
+
+                }
+                
+            }
+
+        }
+
+    </script>
+
+</fieldset>

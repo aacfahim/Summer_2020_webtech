@@ -5,14 +5,14 @@
 	
 	if(isset($_POST['submit'])){
 
-		$username = $_POST['userName'];
+		$username = $_POST['username'];
 		$password = $_POST['password'];
 		
 		if($username == "" || $password == "" ){
             header('location: login.html?msg=All fields are required');
 		}else{
 			
-			$sql = "select * from userLogin where id='".$username."' and password='".$password."'";
+			$sql = "select * from mini_project where id='".$username."' and password='".$password."'";
 
 
 			$result = mysqli_query($connection, $sql);
@@ -21,10 +21,10 @@
 
 			if(count($row) > 0){
 
-                $userName = $row['ID'];
-                $name = $row['Name'];
-                $email = $row['Email'];
-                $userType = $row['Type'];
+                $userName = $row['id'];
+                $name = $row['name'];
+                $email = $row['email'];
+                $userType = $row['type'];
 
                 //echo  $userType;
 

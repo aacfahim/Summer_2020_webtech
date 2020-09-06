@@ -23,7 +23,7 @@
 			<tr>
 				<td>User Name</td>
 				<td>:</td>
-				<td><input name="userName" type="text" id="username"></td>
+				<td><input name="username" type="text" id="username"></td>
 				<td></td>
 			</tr>		
 			<tr><td colspan="4"><hr/></td></tr>
@@ -76,7 +76,7 @@
 
             xhttp.open("POST", "regcheck.php", true);
             xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            xhttp.send("username="+username+"name="+name+"email="+email+"password="+password+"type="+type);
+            xhttp.send("name="+name+"&username="+username+"&email="+email+"&password="+password+"&type="+type);
 
 			//document.getElementById("message").innerHTML = "name="+name;
 			
@@ -84,19 +84,29 @@
             xhttp.onreadystatechange = function(){
                 if(this.readyState == 4 && this.status == 200){
 
-					alert(this.responseText);
+					//alert(this.responseText);
+					// document.getElementsByTagName('a')[0].style.display = "inline";
 
-                    // if(this.responseText == "done"){
 
-                    //     document.getElementsByTagName('a')[0].style.display = "inline";
-                    // }else{
-                    //     document.getElementById("message").innerHTML = "Error";
-                    // }
 
+
+                    if(this.responseText == "done"){
+
+                        document.getElementsByTagName('a')[0].style.display = "inline";
+                    }else if(this.responseText == "null"){
+                        document.getElementById("message").innerHTML = "Can't accept null values..";
+                    }
+					else{
+						document.getElementById("message").innerHTML = "Error";
+					}
+
+				//alert(this.responseText);
+					
                 }
                 
             }
 
+			
         }
 
     </script>

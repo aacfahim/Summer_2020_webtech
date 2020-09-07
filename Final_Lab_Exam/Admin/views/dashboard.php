@@ -26,31 +26,7 @@
 		padding-bottom: 100%;
 	}
 </style>
-    <script>
-            function searchAuthor(){
-
-                var username = document.getElementById("username").value;
-                var xhttp = new XMLHttpRequest();
-
-                xhttp.open("POST", "../views/dashboard.php?username="+username, true);
-                xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                xhttp.send('username='+username);
-                // xhttp.setRequestHeader()
-                // xhttp.send("name="+name+"&&username="+username);
-                //document.getElementById("result").innerHTML = xhttp.responseText;
-
-                xhttp.onreadystatechange = function(){
-
-                    if(this.readyState == 4 && this.status == 200){
-                        //alert(this.responseText);
-                        document.getElementById("search-result").innerHTML = this.responseText;
-                    }
-                }
-
-
-
-    }
-    </script>
+   
 
     <title>ADMIN | Dashboard</title>
 </head>
@@ -84,15 +60,40 @@
 
                 </td>
             </tr>
-
             <tr>
-                <td align="right">
-                    <div class="search-result"></div>
+                <td align="center">
+                    <div id="search-result"></div>
 
                 </td>
             </tr>
         </table>
     </form>
+
+    <script>
+            function searchAuthor(){
+
+                var username = document.getElementById("username").value;
+                var xhttp = new XMLHttpRequest();
+
+                xhttp.open("POST", "../controller/searchController.php?username="+username, true);
+                xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                xhttp.send('username='+username);
+                // xhttp.setRequestHeader()
+                // xhttp.send("name="+name+"&&username="+username);
+                //document.getElementById("result").innerHTML = xhttp.responseText;
+
+                xhttp.onreadystatechange = function(){
+
+                    if(this.readyState == 4 && this.status == 200){
+                        //alert(this.responseText);
+                        document.getElementById("search-result").innerHTML = this.responseText;
+                    }
+                }
+
+
+
+        }
+    </script>
 
 </body>
 

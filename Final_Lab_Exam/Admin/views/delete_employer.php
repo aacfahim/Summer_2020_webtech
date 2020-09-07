@@ -16,14 +16,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Edit Employers</title>
+	<title>Delete Employer</title>
 </head>
 <body>
 	<form action="../services/userService.php" method="post">
 		<fieldset>
-			<legend>Edit User</legend>
+			<legend>Delete Employer</legend>
 			<table>
-                <tr>
+            <tr>
 					<td>Name</td>
 					<td><input type="text" name="name" value="<?=$user['name']?>"></td>
                 </tr>
@@ -46,8 +46,12 @@
 				<tr>
 					<td></td>
 					<td>
-						<input type="hidden" name="id" value="<?=$user['username']?>">
-						<input type="submit" name="update" value="update">
+                        <input type="hidden" name="username" value="<?=$user['username']?>">
+                        <?php echo "Are you sure want to delete?" ?>
+						
+                        <input type="submit" name="yes_delete" value="Delete">
+                        <input type="submit" name="no_delete" value="Cancel">
+                        
 					</td>
 				</tr>
 			</table>

@@ -64,7 +64,21 @@
 	}
 	function update($user){
 		$con = DBconnect();
-		$sql = "update author set username='{$user['username']}', password='{$user['password']}', email='{$user['contact']}' where username={$user['username']}";
+		$sql = "update employee set username='{$user['username']}', password='{$user['password']}', email='{$user['contact']}' where username={$user['username']}";
+
+		if(mysqli_query($con, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	function delete($user){
+		$delete = 	$_POST['delete'];
+
+		$con = DBconnect();
+		$sql = "delete from employee where id={$user['username']}";
+
 
 		if(mysqli_query($con, $sql)){
 			return true;

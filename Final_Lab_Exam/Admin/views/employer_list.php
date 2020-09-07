@@ -35,7 +35,7 @@
                 <td><?= $users[$i]['password'] ?> </td>
 				<td>
 					<a href="edit_employer.php?username=<?=$users[$i]['username']?>"> Edit</a> |
-					<a href="delete.php?username=<?=$users[$i]['username']?>"> Delete</a> 
+					<a href="delete_employer.php?username=<?=$users[$i]['username']?>"> Delete</a> 
 
 				</td>
 			</tr>

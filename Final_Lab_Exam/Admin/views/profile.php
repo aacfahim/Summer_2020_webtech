@@ -7,7 +7,7 @@
     // $name = $_SESSION['name'];
     // $email = $_SESSION['email'];
 
-    $user = getByUsername($_SESSION['username']);
+    $user = getAdminProfile($_SESSION['username']);
 
 
 	if(isset($_GET['error'])){
@@ -26,10 +26,10 @@
     <title>Profile</title>
 </head>
 <body>
-    <h5><?=$_SESSION['username']?></h5>
+    <h5>Logged in as <?=$_SESSION['username']?></h5>
 
     <form>
-        <table>
+        <table border="1">
             <tr>
                 <td>Name</td>
                 <td><?=$user['name']?></td>

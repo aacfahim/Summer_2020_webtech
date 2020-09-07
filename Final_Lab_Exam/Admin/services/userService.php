@@ -10,6 +10,14 @@
 		return $row;
 	}
 
+	function getAdminProfile($username){
+		$con = DBconnect();
+		$sql = "select * from admin where username ='{$username}'";
+		$result = mysqli_query($con, $sql);
+		$row = mysqli_fetch_assoc($result);
+		return $row;
+	}
+
 	function SearchByUsername($username){
 		$con = DBconnect();
 		$sql = "select * from employee where username like '%{$username}%'";

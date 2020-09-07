@@ -12,7 +12,7 @@
 
 	if(isset($_GET['error'])){
 		if($_GET['error'] == 'dberror'){
-			echo "something wrong ...please try again.";
+			echo "something wrong ...please try again or check keywords.";
 		}
 	}
 ?>

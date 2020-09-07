@@ -68,8 +68,8 @@
                 <td>
                     <div class="dashboard-left-panel">
                         <nav> <a href="dashboard.php">Admin Dashboard</a></nav>
-                        <nav> <a href="#">Register New Author</a></nav>
-                        <nav> <a href="#">Edit Author</a></nav>
+                        <nav> <a href="#">Register New Employer</a></nav>
+                        <nav> <a href="#">Edit Employer</a></nav>
                         <nav> <a href="profile.php">Profile</a></nav>
                         <nav> <a href="../controller/logoutController.php">Logout</a></nav>
                     </div>

@@ -30,7 +30,7 @@
                 <td>
                     <div class="dashboard-left-panel">
                         <nav> <a href="dashboard.php">Employer Dashboard</a></nav>
-                        <nav> <a href="#">Add Job</a></nav>
+                        <nav> <a href="add_job.php">Add Job</a></nav>
                         <nav> <a href="#">Edit Job</a></nav>
                         <nav> <a href="profile.php">Profile</a></nav>
                         <nav> <a href="../controller/logoutController.php">Logout</a></nav>

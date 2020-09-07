@@ -1,7 +1,7 @@
 <?php
 	
-	require_once('Author/controller/sessionController.php');	
-    require_once('Author/services/userService.php');	
+	require_once('../controller/sessionController.php');	
+    require_once('..//services/userService.php');	
     
     //$username = $_SESSION['username'];
     // $name = $_SESSION['name'];

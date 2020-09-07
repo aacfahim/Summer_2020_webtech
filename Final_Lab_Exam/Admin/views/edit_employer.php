@@ -47,7 +47,8 @@
 					<td></td>
 					<td>
 						<input type="hidden" name="id" value="<?=$user['username']?>">
-						<input type="submit" name="update" value="update">
+                        <input type="submit" name="update" value="update">
+                        
 					</td>
 				</tr>
 			</table>

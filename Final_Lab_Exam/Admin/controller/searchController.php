@@ -19,7 +19,6 @@
             <td>Name</td>
             <td>Company Name</td>
             <td>Username</td>
-            <td>Password</td>
             <td>Contact</td>
         </tr>";
 
@@ -27,7 +26,6 @@
             <td>{$user['name']}</td>
             <td>{$user['company_name']}</td>
             <td>{$user['username']}</td>
-            <td>{$user['password']}</td>
             <td>{$user['contact']}</td>
         </tr>";
 

@@ -25,6 +25,11 @@
 		background-color: yellow;
 		padding-bottom: 100%;
 	}
+    .search-panel{
+        padding-right: 50%;
+        padding-top: 10%;
+    }
+
 </style>
    
 
@@ -44,7 +49,7 @@
                 <td>
                     <div class="dashboard-left-panel">
                         <nav> <a href="dashboard.php">Admin Dashboard</a></nav>
-                        <nav> <a href="#">Register New Employer</a></nav>
+                        <nav> <a href="register_employer.php">Register New Employer</a></nav>
                         <nav> <a href="#">Edit Employer</a></nav>
                         <nav> <a href="profile.php">Profile</a></nav>
                         <nav> <a href="../controller/logoutController.php">Logout</a></nav>
@@ -59,13 +64,22 @@
                     </div>
 
                 </td>
-            </tr>
-            <tr>
-                <td align="center">
+
+                <td class="search-panel">
                     <div id="search-result"></div>
 
                 </td>
             </tr>
+
+
+            <!-- <tr>
+                <td class="search-panel">
+                    <div id="search-result"></div>
+
+                </td>
+            </tr> -->
+
+
         </table>
     </form>
 

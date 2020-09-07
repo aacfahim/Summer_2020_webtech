@@ -26,10 +26,10 @@
     <title>Profile</title>
 </head>
 <body>
-    <h5><?=$_SESSION['username']?></h5>
+    <h5>You're logged in as <?=$_SESSION['username']?></h5>
 
     <form>
-        <table>
+        <table border="1">
             <tr>
                 <td>Name</td>
                 <td><?=$user['name']?></td>
